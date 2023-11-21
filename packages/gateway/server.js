@@ -1,13 +1,9 @@
 const express = require('express')
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4')
-const { makeExecutableSchema } = require('graphql-tools')
+const schema = require('./data/schema')
 
 const { port } = require('./config')
-
-const typeDefs = `
-    type Query { hey: String! }
-`
 
 const resolvers = {
     Query: {
@@ -17,11 +13,6 @@ const resolvers = {
 
 async function startApolloServer() {
     const app = express();
-
-    const schema = makeExecutableSchema({
-        typeDefs,
-        resolvers
-    })
 
     const server = new ApolloServer({ schema });
 
