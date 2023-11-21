@@ -5,11 +5,6 @@ const schema = require('./data/schema')
 
 const { port } = require('./config')
 
-const resolvers = {
-    Query: {
-        hey: () => 'hey there'
-    }
-}
 
 async function startApolloServer() {
     const app = express();
