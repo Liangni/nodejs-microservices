@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 const mockMails = [
     {
         subject: 'My first Email',
@@ -16,9 +18,15 @@ const mockMails = [
     }
 ]
 
+const getMails = async () => {
+    const mails = (await axios.get('http://localhost:4001/mails')).data.payload
+    console.log(mails)
+    return mails
+}
+
 module.exports = {
     Query: {
-        mails: () => mockMails,
+        mails: () => getMails(),
         mail:(_, args) => mockMails[0],
     },
     Mutation: {
