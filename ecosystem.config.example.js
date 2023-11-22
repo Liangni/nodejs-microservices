@@ -13,7 +13,9 @@ module.exports = {
             PORT: '<YOUR_GATEWAY_PORT>',
             SERVICE_DB_PORT: '<YOUR_DB_SERVICE_PORT>',
             Q_URI: '<YOUR_Q_URI>'
-            }
+            },
+            instances: 'max',
+            exec_mode: 'cluster'
         }, 
     // DB SERVICE
         {
