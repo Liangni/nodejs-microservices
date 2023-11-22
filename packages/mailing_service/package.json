@@ -1,0 +1,14 @@
+{
+  "name": "mailing_service",
+  "version": "1.0.0",
+  "description": "This is the Mailing Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Penny Pan",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3"
+  }
+}
