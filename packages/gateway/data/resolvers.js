@@ -20,14 +20,18 @@ const mockMails = [
 
 const getMails = async () => {
     const mails = (await axios.get('http://localhost:4001/mails')).data.payload
-    console.log(mails)
     return mails
 }
 
 const getSingleMail = async id => {
     const mail = (await axios.get(`http://localhost:4001/mails/${id}`)).data.payload
     return mail
-} 
+}
+
+const postSingleMail = async body => {
+    const postedMail = (await axios.post('http://localhost:4001/mails', { ...body })).data.payload
+    return postedMail
+}
 
 module.exports = {
     Query: {
@@ -35,10 +39,6 @@ module.exports = {
         mail:(_, { id }) => getSingleMail(id),
     },
     Mutation: {
-        mail: (_, args) => {
-            mockMails[0] = args
-
-            return args
-        }
+        mail: (_, args) => postSingleMail(args)
     }
 }
