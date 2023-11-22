@@ -1,17 +1,17 @@
 const mockMails = [
     {
         subject: 'My first Email',
-        reciever: 'test@test.com',
+        receiver: 'test@test.com',
         content: 'hello world'
     },
     {
         subject: 'My second Email',
-        reciever: 'test@test.com',
+        receiver: 'test@test.com',
         content: 'hello world'
     },
     {
         subject: 'My third Email',
-        reciever: 'test@test.com',
+        receiver: 'test@test.com',
         content: 'hello world'
     }
 ]
