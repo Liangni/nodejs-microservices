@@ -9,7 +9,8 @@ module.exports = {
     watch: true,
     env: {
       PORT: '<YOUR_GATEWAY_PORT>',
-      SERVICE_DB_PORT: '<YOUR_DB_SERVICE_PORT>'
+      SERVICE_DB_PORT: '<YOUR_DB_SERVICE_PORT>',
+      Q_URI: '<YOUR_Q_URI>'
     }
   }, {
     name: 'DB Service',

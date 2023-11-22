@@ -1,11 +1,10 @@
-require('dotenv').config()
 const amqp = require('amqplib/callback_api')
-const { DOTENV_AMQP_URL } = process.env
+const { q: { uri } } = require('../config')
 
 const q = 'test_q'
 let channel
 
-amqp.connect(DOTENV_AMQP_URL, (err, conn) => {
+amqp.connect(uri, (err, conn) => {
     if (err) throw new Error(err)
 
     conn.createChannel((err, ch) => {
@@ -13,6 +12,19 @@ amqp.connect(DOTENV_AMQP_URL, (err, conn) => {
 
         ch.assertQueue(q, { durable: true })
 
-        ch.sendToQueue(q, Buffer.from('Hello RabbitMQ Again'))
+        channel = ch
     })
 })
+
+const pushToMessageQ = msg => {
+    // 若連線還沒有處理完，則延遲推送訊息
+    if (!channel) setTimeout(pushToMessageQ(msg), 1000)
+
+    channel.sendToQueue(q, Buffer.from(msg))
+
+    return { m: 'done' }
+}
+
+module.exports = {
+    pushToMessageQ
+}
