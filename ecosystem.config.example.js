@@ -31,7 +31,11 @@ module.exports = {
             script: basePath + '/mailing_service/index.js',
             watch: true,
             env: {
-            Q_URI: '<YOUR_Q_URI>'
+                MJ_API_PUBLIC: '<YOUR_MJ_API_PUBLIC>',
+                MJ_API_SECRET: '<YOUR_MJ_API_SECRET>',
+                FROM_EMAIL: '<YOUR_FROM_EMAIL>',
+                FROM_NAME: '<YOUR_FROM_NAME>',
+                Q_URI: '<YOUR_Q_URI>'
             }
         }
     ],

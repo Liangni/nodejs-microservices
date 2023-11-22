@@ -1,6 +1,8 @@
 const amqp = require('amqplib/callback_api')
 const { q: { uri } } = require('../config')
 
+const sendMail = require('../handler/sendMail')
+
 module.exports = () => {
     const q = 'test_q'
 
@@ -24,6 +26,8 @@ module.exports = () => {
                 }
     
                 console.log('I RECEIVED A MAIL!', mail)
+
+                sendMail(mail)
     
                 ch.ack(msg) // 告訴 server 確認收到 msg 了
     
