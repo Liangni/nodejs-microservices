@@ -2,7 +2,7 @@
 在 node.js 執行環境運行一個簡單的微服務架構，讓客戶端可以寄發信件與檢視寄件紀錄。
 
 ## 專案架構
-![image](/readme/nodejs-microservices.drawio.png)
+![image](/readme/project-structure.png)
 
 ## 服務說明
 客戶端透過 graphql 介面創建 email 內容後，API gateway 將透過微服務達成：
