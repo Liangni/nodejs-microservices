@@ -10,8 +10,8 @@
 2. 將內容送往 RabbitMQ 列隊。待 mailing_service 訂閱取得 RabbitMQ 列隊的 email 內容後，將操作 mailjet 並將信件寄出
 
 ## 先備條件
-1. 在 MongoDB Atlas 網站註冊並創建 DB instance 並取得連線
-2. 在 Rabbit MQ 網站註冊並創建 queue instance 並取得連線
+1. 在 MongoDB Atlas 網站註冊並創建 DB instance 與取得連線
+2. 在 Rabbit MQ 網站註冊並創建 queue instance 與取得連線
 3. 在 mailjet 網站註冊並取得 API keys 和 Sender address 等資訊
 
 ## 主要開發工具
