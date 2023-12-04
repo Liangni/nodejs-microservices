@@ -38,6 +38,7 @@ npm install
 
 ```
 cd <YOUR-PATH-TO-PROJECT-DIRECTORY>/nodejs-microservices/packages/mailing_service
+
 npm install
 ```
 <br/>
