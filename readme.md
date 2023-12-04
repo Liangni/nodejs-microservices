@@ -1,5 +1,5 @@
 # Nodejs - 微服務練習
-在 node.js 架設一個簡單的微服務架構。
+在 node.js 執行環境運行一個簡單的微服務架構，讓客戶端可以寄發信件與檢視寄件紀錄。
 
 ## 專案架構
 ![image](/readme/nodejs-microservices.drawio.png)
